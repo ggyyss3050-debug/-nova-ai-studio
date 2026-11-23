@@ -1,3 +1,10 @@
+const SUPABASE_URL = "https://zholpbduhxmxfmwbvblu.supabase.co";
+const SUPABASE_KEY = "ضع_publishable_key_هنا";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY = "sb_publishable_88Vl0u57rWdw8q3UGdZ0EQ_HUjAKUEH
+);
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
 let mode = "image";
