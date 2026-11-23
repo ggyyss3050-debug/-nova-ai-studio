@@ -1,10 +1,4 @@
 
-/* =====================================
-   NOVA AI STUDIO
-   Supabase Authentication + Main App
-===================================== */
-
-// 1. Supabase connection
 const SUPABASE_URL = "https://zholpbduhxmxfmwbvblu.supabase.co";
 const SUPABASE_KEY = "sb_publishable_88Vl0u57rWdw8q3UGdZ0EQ_HUjAKUEH";
 
