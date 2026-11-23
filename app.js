@@ -1,6 +1,4 @@
 
- // 19. Real AI image generation
-
 const generateResult = document.createElement("div");
 generateResult.id = "novaGeneratedResult";
 
