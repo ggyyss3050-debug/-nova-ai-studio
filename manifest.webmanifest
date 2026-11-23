@@ -1,0 +1,10 @@
+{
+  "name": "NOVA AI STUDIO",
+  "short_name": "NOVA Studio",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090b12",
+  "theme_color": "#090b12",
+  "description": "AI creative studio prototype",
+  "icons": []
+}

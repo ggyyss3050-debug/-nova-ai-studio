@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="NOVA AI STUDIO — مساحة إبداع بالذكاء الاصطناعي">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>NOVA AI STUDIO</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">N</span><span><b>NOVA</b><small>AI STUDIO</small></span></a>
+      <div class="side-label">مساحة العمل</div>
+      <button class="nav-item active" data-page="create"><span>✦</span> إنشاء جديد</button>
+      <button class="nav-item" data-page="library"><span>▦</span> مكتبتي</button>
+      <div class="side-label">الأدوات</div>
+      <button class="nav-item tool-link" data-mode="image"><span>▧</span> توليد الصور</button>
+      <button class="nav-item tool-link" data-mode="video"><span>▶</span> نص إلى فيديو</button>
+      <button class="nav-item tool-link" data-mode="animate"><span>◉</span> تحريك صورة</button>
+      <div class="sidebar-bottom"><div class="status-dot"></div><span>نسخة تجريبية محلية</span></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+        <div class="crumb">مساحة العمل <span>/</span> <b id="crumbTitle">إنشاء جديد</b></div>
+        <div class="top-actions"><span class="free-pill">تجربة مجانية</span><div class="avatar">N</div></div>
+      </header>
+
+      <section id="createPage" class="page">
+        <div class="hero">
+          <div class="eyebrow"><i></i> استوديو الإبداع بالذكاء الاصطناعي</div>
+          <h1>حوّل خيالك إلى <em>واقع.</em></h1>
+          <p>اكتب فكرتك، اختار الأداة، وجهّز مشروعك الإبداعي.</p>
+        </div>
+
+        <div class="workspace">
+          <div class="panel editor">
+            <div class="panel-head"><div><span class="step">01</span><b>اختار نوع الإنشاء</b></div><span class="subtle">ابدأ من هنا</span></div>
+            <div class="mode-grid" role="tablist">
+              <button class="mode-card selected" data-mode="image"><span class="mode-icon">▧</span><b>توليد صورة</b><small>من وصف نصي</small></button>
+              <button class="mode-card" data-mode="video"><span class="mode-icon">▶</span><b>توليد فيديو</b><small>من وصف نصي</small></button>
+              <button class="mode-card" data-mode="animate"><span class="mode-icon">◉</span><b>تحريك صورة</b><small>من صورة ترفعها</small></button>
+            </div>
+
+            <div class="panel-head prompt-head"><div><span class="step">02</span><b id="promptTitle">اكتب وصف الصورة</b></div><span class="subtle">كلما كان الوصف أوضح كانت النتيجة أفضل</span></div>
+            <textarea id="prompt" placeholder="مثال: مشهد سينمائي لتنين أسطوري فوق مدينة مستقبلية، إضاءة درامية، تفاصيل فائقة..."></textarea>
+            <div class="prompt-footer"><span id="charCount">0 / 1200</span><button class="ghost-btn" id="clearPrompt">مسح النص</button></div>
+
+            <div id="uploadArea" class="upload-area hidden">
+              <input type="file" id="imageUpload" accept="image/*" hidden>
+              <button class="upload-inner" id="uploadBtn"><span class="upload-symbol">＋</span><b>ارفع صورة للتحريك</b><small>PNG أو JPG — اختر صورة من جهازك</small></button>
+              <div id="previewWrap" class="preview-wrap hidden"><img id="preview" alt="معاينة الصورة"><button id="removeImage" class="remove-image">إزالة الصورة</button></div>
+            </div>
+
+            <div class="options-row">
+              <label>نسبة الأبعاد
+                <select id="ratio"><option>16:9 أفقي</option><option>9:16 رأسي</option><option>1:1 مربع</option><option>4:5 عمودي</option></select>
+              </label>
+              <label>الجودة
+                <select id="quality"><option>قياسية</option><option>عالية</option></select>
+              </label>
+            </div>
+            <button class="generate-btn" id="generateBtn"><span>✦</span> تجهيز الطلب <b>←</b></button>
+            <p class="fine-print">هذه نسخة واجهة أولية؛ التوليد الحقيقي يحتاج توصيل محرك ذكاء اصطناعي.</p>
+          </div>
+
+          <div class="panel preview-panel">
+            <div class="preview-top"><b>مساحة المعاينة</b><span class="live-tag"><i></i> LIVE PREVIEW</span></div>
+            <div class="canvas" id="canvas">
+              <div class="canvas-glow"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="nova-symbol">✦</div>
+              <h2>مساحتك الإبداعية</h2><p>ستظهر هنا معاينة مشروعك بعد توصيل محرك التوليد.</p>
+              <span class="canvas-caption">NOVA / CREATIVE ENGINE</span>
+            </div>
+            <div class="preview-note"><span>ⓘ</span><p>لا يتم إنشاء ملفات وهمية في هذه النسخة. سنوصل محرك الصور والفيديو في الخطوة التالية.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="libraryPage" class="page hidden">
+        <div class="hero compact"><div class="eyebrow"><i></i> أعمالك</div><h1>مكتبة <em>المشاريع.</em></h1><p>المشاريع التي تحفظها على هذا الجهاز ستظهر هنا.</p></div>
+        <div class="panel library-empty"><div class="empty-icon">▦</div><h2>مكتبتك لسه فاضية</h2><p>ابدأ مشروع جديد، وبعد توصيل التوليد هنضيف الحفظ والتنزيل.</p><button class="generate-btn small" id="backToCreate">ابدأ مشروع جديد ←</button></div>
+      </section>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
