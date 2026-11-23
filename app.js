@@ -4,7 +4,7 @@ const SUPABASE_KEY = "sb_publishable_88Vl0u57rWdw8q3UGdZ0EQ_HuJAKUEH";
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
-  SUPABASE_KEY
+  SUPABASE_KEY = "sb_publishable_88Vl0u57rWdw8q3UGdZ0EQ_HUjAKUEH
 );
 
 const $ = (s) => document.querySelector(s);
